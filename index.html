@@ -10,7 +10,6 @@
     
     <style>
         :root {
-            /* لوحة الألوان النارية */
             --bg-darkest: #1a0000;
             --bg-fire-gradient: linear-gradient(to bottom, #300000, #600000, #300000);
             --container-bg: rgba(40, 0, 0, 0.95);
@@ -43,7 +42,7 @@
             box-shadow: 0 0 20px var(--accent-orange-glow), inset 0 0 10px var(--accent-orange-glow);
         }
 
-        /* --- الهيدر واللوجو --- */
+        /* --- Header --- */
         header {
             text-align: center;
             margin-bottom: 30px;
@@ -86,7 +85,7 @@
             font-weight: 700;
         }
 
-        /* --- الأقسام --- */
+        /* --- Menu Sections --- */
         .menu-section {
             border: 2px solid var(--accent-yellow); 
             border-radius: 12px;
@@ -114,19 +113,15 @@
             gap: 10px;
         }
         
-        .section-title i {
-            color: var(--accent-orange-glow);
-        }
+        .section-title i { color: var(--accent-orange-glow); }
 
-        /* --- تصميم العناصر --- */
+        /* --- Items --- */
         .burger-item {
             padding: 10px;
             margin-bottom: 15px;
             border-bottom: 1px dashed var(--accent-yellow);
         }
-        .burger-item:last-child {
-            border-bottom: none;
-        }
+        .burger-item:last-child { border-bottom: none; }
 
         .item-name {
             font-size: 1.3rem;
@@ -141,7 +136,6 @@
             margin-bottom: 10px;
         }
 
-        /* --- الأسعار المتعددة --- */
         .price-multi {
             display: flex;
             flex-wrap: wrap;
@@ -168,7 +162,6 @@
             margin-right: 8px;
         }
 
-        /* --- القوائم البسيطة --- */
         .simple-list-item {
             display: flex;
             justify-content: space-between;
@@ -199,7 +192,7 @@
             border: 2px solid var(--accent-yellow);
         }
 
-        /* --- الفوتر --- */
+        /* --- Footer --- */
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -228,10 +221,22 @@
             object-fit: contain;
         }
 
-        .footer p { margin-bottom: 10px; font-size: 1.1rem; }
-        .footer i { color: var(--accent-yellow); }
+        /* تنسيق الروابط في الفوتر */
+        .footer-link {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--text-white);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .footer-link:hover {
+            color: var(--accent-yellow);
+            transform: scale(1.05);
+        }
+        .footer i { margin-left: 10px; color: var(--accent-yellow); }
 
-        /* --- التوقيع --- */
+        /* --- Signature --- */
         .signature-box {
             margin-top: 30px;
             font-family: 'Dancing Script', cursive;
@@ -244,19 +249,19 @@
             text-shadow: 1px 1px 2px #000;
         }
 
-        .signature-box span {
+        .signature-box a {
             display: block;
             font-size: 1.2rem;
             color: #fff;
             font-family: 'Cairo', sans-serif;
             margin-top: 5px;
+            text-decoration: none;
         }
 
-        .call-btn {
+        /* --- Floating Buttons --- */
+        .call-btn, .whats-btn {
             position: fixed;
-            bottom: 20px;
             left: 20px;
-            background: #25d366;
             color: white;
             width: 60px;
             height: 60px;
@@ -268,8 +273,26 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.6);
             text-decoration: none;
             z-index: 100;
-            border: 3px solid var(--accent-yellow);
+            border: 2px solid white;
+            transition: 0.3s;
         }
+        
+        /* زر الاتصال */
+        .call-btn {
+            bottom: 20px;
+            background: #007bff; /* أزرق للاتصال */
+        }
+        
+        /* زر الواتساب */
+        .whats-btn {
+            bottom: 90px; /* فوق زر الاتصال */
+            background: #25d366; /* أخضر للواتساب */
+        }
+
+        .call-btn:hover, .whats-btn:hover {
+            transform: scale(1.1);
+        }
+
     </style>
 </head>
 <body>
@@ -277,7 +300,7 @@
 <div class="container">
     <header>
         <div class="logo-area">
-            <img src="لوجو.png" alt="Tasbera Logo">
+            <img src="logo.png" alt="Tasbera Logo">
         </div>
         <h1>TASBERA MENU</h1>
         <div class="subtitle">حلو وحادق - الطعم الأصلي</div>
@@ -441,20 +464,29 @@
     </div>
 
     <div class="footer">
-        <h3 style="color: var(--accent-yellow); margin-bottom: 15px;">Facebook Account</h3>
+        <h3 style="color: var(--accent-yellow); margin-bottom: 15px;">SCAN FOR MENU & OFFERS</h3>
         
         <div class="qr-code-area">
             <img src="TASBERA.png" alt="QR Code">
         </div>
         
-        <p><i class="fas fa-map-marker-alt"></i> أبو كبير - بجوار بيت البن</p>
-        <p><i class="fab fa-whatsapp"></i> 01030509087</p>
+        <div class="footer-link">
+            <i class="fas fa-map-marker-alt"></i> أبو كبير - بجوار بيت البن
+        </div>
+        
+        <a href="https://wa.me/201030509087" target="_blank" class="footer-link">
+            <i class="fab fa-whatsapp"></i> 01030509087
+        </a>
 
         <div class="signature-box">
             Edited by : Ali Amin Salah
-            <span>01060901179</span>
+            <a href="tel:01060901179">01060901179</a>
         </div>
     </div>
+
+    <a href="https://wa.me/201030509087" target="_blank" class="whats-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <a href="tel:01030509087" class="call-btn">
         <i class="fas fa-phone-alt"></i>
